@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+	<style>
+		.slide pre code{
+			line-height: 40px;
+		}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Shower Presentation Engine</h1>
+		<p>Yours Truly, Famous Inc.</p>
+	</header>
+	<section class="slide" id="Cover"><div>
+		<h2>CSS preprocessors</h2>
+		<p>for <a href="http://stuzo.com">Stuzo</a> team</p>
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#Cover h2 {
+				margin:30px 0 0;
+				color:#000;
+				text-align:center;
+				font-size:70px;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#000;
+				font-style:italic;
+				font-size:20px;
+				}
+				#Cover p a {
+					color:#000;
+					}
+		</style>
+	</div></section>
+	<section class="slide"><div>
+		<h2>CSS Preprocessors</h2>
+		<ol>
+			<li>What is it?</li>
+			<li>Why use?</li>
+			<li>How to use?</li>
+		</ol>
+	</div></section>
+	<section class="slide cover" id="FirstWebPage"><div>
+		<h2>First web page</h2>
+		<p>No styles</p>
+		<img src="pictures/first-web-page.png" alt="">
+		<style>
+			#FirstWebPage h2 {
+				position: absolute;
+				bottom: 80px;
+				right: 50px;
+				color: #000;
+			}
+			#FirstWebPage p {
+				position: absolute;
+				bottom: 0px;
+				right: 50px;
+				color: #000;
+			}
+		</style>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Now</h2>
+		<p>Average webpage has 45Kb of CSS (<a href="http://httparchive.org/interesting.php#bytesperpage">by HttpArchive</a>)</p>
+		<p>It's about 2000 lines of css file</p>
+		<p>And it's an average website. We have more.</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>CSS Preprocessors</h2>
+		<p>
+		Superset of CSS.
+		</p>
+		<p>
+		Compiles to CSS by external tool.
+		</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Why use it?</h2>
+		<ul>
+			<li class="next">No reasons not to use.</li>
+			<li class="next">Faster writing.</li>
+			<li class="next">Faster reading.</li>
+			<li class="next">Less copy-pasting.</li>
+			<li class="next">Becoming industry standard (and you'll be asked about it on a job interview).</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Imagine application code</h2>
+		<ul>
+			<li>All in single file.</li>
+			<li>With a lots of unnamed numerical and literal constants.</li>
+			<li>With a lots of copy &amp; paste.</li>
+			<li>Without abstractions.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="pictures/mess.jpg"/>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>So why write CSS this way?</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>How CSS Preprocessors can help?</h2>
+
+		<ul>
+			<li>Variables</li>
+			<li>Operations and calculations</li>
+			<li>Inheritance</li>
+			<li>Mixins</li>
+			<li>Modules and importing</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Variables</h2>
+
+		<pre>
+			<code>$pageWidth: 1024px;</code>
+			<code>$mainTextColor: #5C5C5C</code>
+			<code> </code>
+			<code>body {</code>
+			<code>    color: $mainTextColor;</code>
+			<code>}</code>
+			<code>.container {</code>
+			<code>    width: $pageWidth;</code>
+			<code>}</code>
+		</pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Variables</h2>
+		<p>Useful to create and manage styleguides.</p>
+		<p>Much more useful when combined with other preprocessor features.</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Operations and calculations</h2>
+
+		<pre>
+			<code>$defaultTextSize: 14px</code>
+			<code> </code>
+			<code>.h1 {</code>
+			<code>    font-size: $defaultTextSize + 12;</code>
+			<code>}</code>
+			<code>.h2 {</code>
+			<code>    font-size: $defaultTextSize + 8;</code>
+			<code>}</code>
+		</pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Operations and calculations</h2>
+
+		<p>Much more readable styles:</p>
+
+		<pre>
+			<code>.some_element {</code>
+			<code>    width: 322px;</code>
+			<code>}</code>
+		</pre>
+		<pre>
+			<code>.some_element {</code>
+			<code>    width: $pageWidth - $sizebarWidth - $defaultMargin;</code>
+			<code>}</code>
+		</pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Nesting</h2>
+		<pre>
+			<code>.article {</code>
+			<code>	a {</code>
+			<code>		font-color: $linkColor;</code>
+			<code>		text-decoration: underline;</code>
+			<code>		&amp;:hover {</code>
+			<code>			text-decoration: none;</code>
+			<code>		}</code>
+			<code>	}</code>
+			<code>}</code>
+		</pre>
+	</div></section>
+
+
+	<section class="slide"><div>
+		<h2>Inheritance</h2>
+		<pre>
+			<code>.error {</code>
+			<code>    border: 1px #f00;</code>
+			<code>    background-color: #fdd;</code>
+			<code>}</code>
+			<code>.seriousError {</code>
+			<code>    @extend .error;</code>
+			<code>    border-width: 3px;</code>
+			<code>}</code>
+		</pre>
+	</div></section>
+
+	<section class="slide" id="Mixins"><div>
+		<h2>Mixins</h2>
+		<pre>
+			<code>@mixin vendor-prefix($name, $argument) {</code>
+			<code>  -webkit-#{$name}: #{$argument};</code>
+			<code>  -ms-#{$name}: #{$argument};</code>
+			<code>  -moz-#{$name}: #{$argument};</code>
+			<code>  -o-#{$name}: #{$argument};</code>
+			<code>  #{$name}: #{$argument};</code>
+			<code>}</code>
+			<code>p {</code>
+			<code>  @include vendor-prefix(hyphens, auto)</code>
+			<code>}</code>
+		</pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Modules and importing</h2>
+		<pre>
+			<code>@import "reset";</code>
+			<code>@import "styleguide";</code>
+			<code>@import "layout";</code>
+		</pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>How to start?</h2>
+		<ul>
+			<li>Read about <a href="http://sass-lang.com/">SASS</a>, <a href="http://lesscss.org/">LESS</a> or/and <a href="http://learnboost.github.io/stylus/">Stylus</a> </li>
+			<li>Rename .css to .less (.sass/.stylus).</li>
+			<li>Set up <a href="http://livereload.com/">LiveReload</a> (you should try it anyway).</li>
+			<li>Refactor old styles when you have time.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>You can do it this week.</h2>
+	</div></section>
+
+
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>

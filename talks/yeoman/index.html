@@ -14,11 +14,10 @@
 </head>
 <body class="list">
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>Yeoman. Idea and tools</h1>
 	</header>
 	<section class="slide" id="Cover"><div>
-		<h2>CSS preprocessors</h2>
+		<h2>Yeoman. Idea and tools.</h2>
 		<p>for <a href="http://stuzo.com">Stuzo</a> team</p>
 		<!--
 			To apply styles to the certain slides
@@ -43,215 +42,117 @@
 					}
 		</style>
 	</div></section>
-	<section class="slide"><div>
-		<h2>CSS Preprocessors</h2>
-		<ol>
-			<li>What is it?</li>
-			<li>Why use?</li>
-			<li>How to use?</li>
-		</ol>
+	<section class="slide shout"><div>
+		<h2>When do we need automation?</h2>
 	</div></section>
-	<section class="slide cover" id="FirstWebPage"><div>
-		<h2>First web page</h2>
-		<p>No styles</p>
-		<img src="pictures/first-web-page.png" alt="">
+	<section class="slide cover caveman"><div>
+		<img src="pictures/caveman.jpg">
+		<div class="next">
+		<h2>Walk or use transportation?</h2>
+		<div class="description">
+			I'm new to the city.<br/>
+			My home is 20Km from the office.<br/>
+			Should I walk or should I use some kind of transport?
+		</div>
+		</div>
 		<style>
-			#FirstWebPage h2 {
+			.caveman h2 {
 				position: absolute;
-				bottom: 80px;
-				right: 50px;
-				color: #000;
+				top: 50px;
+				left: 0;
+				width: 100%;
+				margin: 0;
+				text-align: center;
+				color: #FFF;
+				text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 			}
-			#FirstWebPage p {
+			.caveman .description {
+				padding: 10px;
 				position: absolute;
 				bottom: 0px;
-				right: 50px;
-				color: #000;
+				left: 50%;
+				margin-left: -250px;
+				width: 500px;
+				color: #FFF;
+				text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+				background: rgba(0, 0, 0, 0.4);
+			}
+			.caveman li {
+				margin-left: 30px;
 			}
 		</style>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Now</h2>
-		<p>Average webpage has 45Kb of CSS (<a href="http://httparchive.org/interesting.php#bytesperpage">by HttpArchive</a>)</p>
-		<p>It's about 2000 lines of css file</p>
-		<p>And it's an average website. We have more.</p>
+	<section class="slide cover caveman"><div>
+		<img src="pictures/caveman.jpg">
+		<h2>Walk</h2>
+		<div class="description">
+			<ul>
+				<li>I know how to do it.</li>
+				<li>I always used walk before.</li>
+				<li>It's only 4-5 hours.</li>
+			</ul>
+		</div>
 	</div></section>
-
-	<section class="slide"><div>
-		<h2>CSS Preprocessors</h2>
-		<p>
-		Superset of CSS.
-		</p>
-		<p>
-		Compiles to CSS by external tool.
-		</p>
+	<section class="slide cover caveman"><div>
+		<img src="pictures/caveman.jpg">
+		<h2>Use transport</h2>
+		<div class="description">
+			<ul>
+				<li>Need to learn how to use transport.</li>
+				<li>Need to find out which route to use.</li>
+				<li>Need money.</li>
+				<li>Some people say it's faster.</li>
+			</ul>
+		</div>
 	</div></section>
-
-	<section class="slide"><div>
-		<h2>Why use it?</h2>
-		<ul>
-			<li class="next">No reasons not to use.</li>
-			<li class="next">Faster writing.</li>
-			<li class="next">Faster reading.</li>
-			<li class="next">Less copy-pasting.</li>
-			<li class="next">Becoming industry standard (and you'll be asked about it on a job interview).</li>
-		</ul>
-	</div></section>
-
-	<section class="slide"><div>
-		<h2>Imagine application code</h2>
-		<ul>
-			<li>All in single file.</li>
-			<li>With a lots of unnamed numerical and literal constants.</li>
-			<li>With a lots of copy &amp; paste.</li>
-			<li>Without abstractions.</li>
-		</ul>
-	</div></section>
-
-	<section class="slide cover"><div>
-		<img src="pictures/mess.jpg"/>
-	</div></section>
-
 	<section class="slide shout"><div>
-		<h2>So why write CSS this way?</h2>
+		<h2>Automation is useful when it saves more time than it takes.</h2>
 	</div></section>
-
 	<section class="slide"><div>
-		<h2>How CSS Preprocessors can help?</h2>
+		<h2>Idea of Yeoman</h2>
+		<p>
 
+		</p>
 		<ul>
-			<li>Variables</li>
-			<li>Operations and calculations</li>
-			<li>Inheritance</li>
-			<li>Mixins</li>
-			<li>Modules and importing</li>
+			<li>Generators for automation of writing code.</li>
+			<li>Grunt for automation of routine tasks.</li>
+			<li>Bower for automation of dependency management.</li>
 		</ul>
 	</div></section>
-
 	<section class="slide"><div>
-		<h2>Variables</h2>
-
-		<pre>
-			<code>$pageWidth: 1024px;</code>
-			<code>$mainTextColor: #5C5C5C</code>
-			<code> </code>
-			<code>body {</code>
-			<code>    color: $mainTextColor;</code>
-			<code>}</code>
-			<code>.container {</code>
-			<code>    width: $pageWidth;</code>
-			<code>}</code>
-		</pre>
-	</div></section>
-
-	<section class="slide"><div>
-		<h2>Variables</h2>
-		<p>Useful to create and manage styleguides.</p>
-		<p>Much more useful when combined with other preprocessor features.</p>
-	</div></section>
-
-	<section class="slide"><div>
-		<h2>Operations and calculations</h2>
-
-		<pre>
-			<code>$defaultTextSize: 14px</code>
-			<code> </code>
-			<code>.h1 {</code>
-			<code>    font-size: $defaultTextSize + 12;</code>
-			<code>}</code>
-			<code>.h2 {</code>
-			<code>    font-size: $defaultTextSize + 8;</code>
-			<code>}</code>
-		</pre>
-	</div></section>
-
-	<section class="slide"><div>
-		<h2>Operations and calculations</h2>
-
-		<p>Much more readable styles:</p>
-
-		<pre>
-			<code>.some_element {</code>
-			<code>    width: 322px;</code>
-			<code>}</code>
-		</pre>
-		<pre>
-			<code>.some_element {</code>
-			<code>    width: $pageWidth - $sizebarWidth - $defaultMargin;</code>
-			<code>}</code>
-		</pre>
-	</div></section>
-
-	<section class="slide"><div>
-		<h2>Nesting</h2>
-		<pre>
-			<code>.article {</code>
-			<code>	a {</code>
-			<code>		font-color: $linkColor;</code>
-			<code>		text-decoration: underline;</code>
-			<code>		&amp;:hover {</code>
-			<code>			text-decoration: none;</code>
-			<code>		}</code>
-			<code>	}</code>
-			<code>}</code>
-		</pre>
-	</div></section>
-
-
-	<section class="slide"><div>
-		<h2>Inheritance</h2>
-		<pre>
-			<code>.error {</code>
-			<code>    border: 1px #f00;</code>
-			<code>    background-color: #fdd;</code>
-			<code>}</code>
-			<code>.seriousError {</code>
-			<code>    @extend .error;</code>
-			<code>    border-width: 3px;</code>
-			<code>}</code>
-		</pre>
-	</div></section>
-
-	<section class="slide" id="Mixins"><div>
-		<h2>Mixins</h2>
-		<pre>
-			<code>@mixin vendor-prefix($name, $argument) {</code>
-			<code>  -webkit-#{$name}: #{$argument};</code>
-			<code>  -ms-#{$name}: #{$argument};</code>
-			<code>  -moz-#{$name}: #{$argument};</code>
-			<code>  -o-#{$name}: #{$argument};</code>
-			<code>  #{$name}: #{$argument};</code>
-			<code>}</code>
-			<code>p {</code>
-			<code>  @include vendor-prefix(hyphens, auto)</code>
-			<code>}</code>
-		</pre>
-	</div></section>
-
-	<section class="slide"><div>
-		<h2>Modules and importing</h2>
-		<pre>
-			<code>@import "reset";</code>
-			<code>@import "styleguide";</code>
-			<code>@import "layout";</code>
-		</pre>
-	</div></section>
-
-	<section class="slide"><div>
-		<h2>How to start?</h2>
+		<h2>Generators</h2>
 		<ul>
-			<li>Read about <a href="http://sass-lang.com/">SASS</a>, <a href="http://lesscss.org/">LESS</a> or/and <a href="http://learnboost.github.io/stylus/">Stylus</a> </li>
-			<li>Rename .css to .less (.sass/.stylus).</li>
-			<li>Set up <a href="http://livereload.com/">LiveReload</a> (you should try it anyway).</li>
-			<li>Refactor old styles when you have time.</li>
+			<li>Start project with appropriate generator</li>
+			<li>Generate files and components</li>
+			<li>Write your own generators</li>
+		</ul>
+		<p>Good for both frontend and backend.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Grunt</h2>
+		<ul>
+			<li>Develop with development server.</li>
+			<li>Watch for changes.</li>
+			<li>Build for production.</li>
 		</ul>
 	</div></section>
-
-	<section class="slide shout"><div>
-		<h2>You can do it this week.</h2>
+	<section class="slide"><div>
+		<h2>Bower</h2>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
 	</div></section>
-
-
+	<section class="slide"><div>
+		<h2>Check out our generator</h2>
+		<p>Confluence page</p>
+		<p>Use on Grammy</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Help improve our generator</h2>
+		<p>Project in JIRA. Add requests, help with development.</p>
+	</div></section>
 	<!--
 		To hide progress bar from entire presentation
 		just remove “progress” element.

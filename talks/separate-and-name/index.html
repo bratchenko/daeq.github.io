@@ -1,154 +1,211 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Separate and name</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=792, user-scalable=no">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
-	<style>
-		.slide pre code{
-			line-height: 35px;
-		}
-	</style>
+    <title>Separate and name</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+    <style>
+        .slide pre code{
+            font-size: 25px;
+            line-height: 28px;
+        }
+        .slide.manycode pre code {
+            font-size: 15px;
+            line-height: 20px;
+        }
+    </style>
 </head>
 <body class="list">
-	<header class="caption">
-		<h1>Separate and name</h1>
-		<p>by Daniil Bratchenko</p>
-	</header>
-	<section class="slide" id="Cover"><div>
-		<h2>Separate and name</h2>
-		<p>for <a href="http://stuzo.com">Stuzo</a> team</p>
-		<!--
-			To apply styles to the certain slides
-			set slide ID to get needed elements
-			-->
-		<style>
-			#Cover h2 {
-				margin:30px 0 0;
-				color:#000;
-				text-align:center;
-				font-size:70px;
-				}
-			#Cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#000;
-				font-style:italic;
-				font-size:20px;
-				}
-				#Cover p a {
-					color:#000;
-					}
-		</style>
-	</div></section>
-	<section class="slide shout"><div>
-		<h2>What is bad code?</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>What is bad code?</h2>
-		<p>Bad code is a code that is hard to understand.</p>
-		Therefore:
-		<ul>
-			<li>You're afraid to change it.</li>
-			<li>Changing it takes a lot of time.</li>
-			<li>Changing it causes bugs.</li>
-		</ul>
-	</div></section>
-	<section class="slide shout"><div>
-		<h2>Code is read more than it is written</h2>
-	</div></section>
-	<section class="slide shout"><div>
-		<h2>There is a silver bullet</h2>
-	</div></section>
-	<section class="slide shout"><div>
-		<h2>Separate and name</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Separate and name</h2>
-		<ol>
-			<li>Split code into trivial chunks.</li>
-			<li>Put results of calculations into variables.</li>
-			<li>Put logic into classes and methods.</li>
-			<li>Name things so their purpose is clear.</li>
-		</ol>
-	</div></section>
-	<section class="slide shout"><div>
-		<h2>Don't be afraid of long names.</h2>
-	</div></section>
-	<section class="slide shout"><div>
-		<h2>It takes practice. But it's worth it.</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Example</h2>
-		<pre>
-			<code>Some</code>
-			<code>unreadable</code>
-			<code>code</code>
-		</pre>
-		<pre class="next">
-			<code>Some</code>
-			<code>readable</code>
-			<code>code</code>
-		</pre>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Another example</h2>
-		<pre>
-			<code>Seemingly</code>
-			<code>readable</code>
-			<code>code</code>
-		</pre>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Another example</h2>
-		<pre>
-			<code>Readable code</code>
-			<code>became even more</code>
-			<code>readable.</code>
-		</pre>
-	</div></section>
-	<section class="slide"><div>
-		<h2>In the past I've been writing code this way</h2>
-		<pre>
-			<code>// Comments</code>
-			<code>// Comments</code>
-			<code>// Comments</code>
-		</pre>
-		<p>
-			And then replace comments with code.
-		</p>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Now I write it this way</h2>
-		<pre>
-			<code>method1()</code>
-			<code>method2()</code>
-			<code>method3()</code>
-		</pre>
-		<p>
-			And then implement methods.
-		</p>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Readable code is more efficient to write</h2>
-		<ul>
-			<li>You making fewer bugs when solving smaller problem.</li>
-			<li>You see logical errors when things are named properly.</li>
-			<li>You get tired less thinking tactically.</li>
-		</ul>
-	</div></section>
-	<section class="slide shout"><div>
-		<h2>Try it tomorrow.</h2>
-	</div></section>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
-	<div class="progress"><div></div></div>
-	<script src="shower/shower.min.js"></script>
-	<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
+    <header class="caption">
+        <h1>Separate and name</h1>
+        <p>by Daniil Bratchenko</p>
+    </header>
+    <section class="slide" id="Cover"><div>
+        <h2>Separate and name</h2>
+        <p>for <a href="http://stuzo.com">Stuzo</a> team</p>
+        <!--
+            To apply styles to the certain slides
+            set slide ID to get needed elements
+            -->
+        <style>
+            #Cover h2 {
+                margin:30px 0 0;
+                color:#000;
+                text-align:center;
+                font-size:70px;
+                }
+            #Cover p {
+                margin:10px 0 0;
+                text-align:center;
+                color:#000;
+                font-style:italic;
+                font-size:20px;
+                }
+                #Cover p a {
+                    color:#000;
+                    }
+        </style>
+    </div></section>
+    <section class="slide shout"><div>
+        <h2>What is bad code?</h2>
+    </div></section>
+    <section class="slide"><div>
+        <h2>What is bad code?</h2>
+        <p>Bad code is a code that is hard to understand.</p>
+        Therefore:
+        <ul>
+            <li>You're afraid to change it.</li>
+            <li>Changing it takes a lot of time.</li>
+            <li>Changing it causes bugs.</li>
+        </ul>
+    </div></section>
+    <section class="slide shout"><div>
+        <h2>Code is read more than it is written</h2>
+    </div></section>
+    <section class="slide shout"><div>
+        <h2>There is a silver bullet</h2>
+    </div></section>
+    <section class="slide shout"><div>
+        <h2>Separate and name</h2>
+    </div></section>
+    <section class="slide"><div>
+        <h2>Separate and name</h2>
+        <ol>
+            <li>Split code into trivial chunks.</li>
+            <li>Put results of calculations into variables.</li>
+            <li>Put logic into classes and methods.</li>
+            <li>Name things so their purpose is clear.</li>
+        </ol>
+    </div></section>
+    <section class="slide shout"><div>
+        <h2>Don't be afraid of long names.</h2>
+    </div></section>
+    <section class="slide manycode"><div>
+        <h2>Example</h2>
+        <pre>
+            <code>$rootScope.$on('$routeChangeSuccess', function(e, next, current){</code>
+            <code>  $rootScope.tags.del('route-');</code>
+            <code>  var r = $location.path().replace(/(^\/+)|(\/.+)/g,''); r && $rootScope.tags.set('route-'+r, true);</code>
+            <code>  $rootScope.tags.push();</code>
+            <code>  $tools.tags.set('process', false).push();</code>
+            <code>});</code>
+        </pre>
+        <div class="next">
+        Separate and name:
+            <pre>
+                <code>$rootScope.$on('$routeChangeSuccess', function(e, next, current){</code>
+                <code>  $tools.removeBodyClass('route-change-in-process');</code>
+                <code>   </code>
+                <code>  $tools.removeBodyClass(/route-.*/);</code>
+                <code>  $tools.addBodyClass('route-' + getCurrentRoute());</code>
+                <code>});</code>
+            </pre>
+        </div>
+    </div></section>
+    <section class="slide"><div>
+        <h2>Another example</h2>
+        <pre>
+            <code>function locator($device) {</code>
+            <code>    // Can we locate the device?</code>
+            <code>    if ($device->token != "" && $device->expire <= $now) {</code>
+            <code>        return false;</code>
+            <code>    }</code>
+            <code>    $modelNotifier = new ModelNotifier($device); </code>
+            <code>    return $modelNotifier->go();</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+    <section class="slide"><div>
+        <h2>Separate and name - 1</h2>
+        <pre>
+            <code>function locator($device) {</code>
+            <code>    if ($device->isLocatable()) {</code>
+            <code>        $modelNotifier = new ModelNotifier($device); </code>
+            <code>        return $modelNotifier->go();</code>
+            <code>    } else { </code>
+            <code>        return false;</code>
+            <code>    } </code>
+            <code>}</code>
+            <code>----</code>
+            <code>function ModelDevice::isLocatable() {</code>
+            <code>    return ($this->token != "" && $this->expire <= $now);</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+    <section class="slide manycode"><div>
+        <h2>Separate and name - 2</h2>
+        <pre>
+            <code>function locator($device) {</code>
+            <code>    if ($device->isLocatable()) {</code>
+            <code>        $modelNotifier = new ModelNotifier($device); </code>
+            <code>        return $modelNotifier->go();</code>
+            <code>    } else { </code>
+            <code>        return false;</code>
+            <code>    } </code>
+            <code>}</code>
+            <code>----</code>
+            <code>function ModelDevice::isLocatable() {</code>
+            <code>    return $this->isOurTokenValid() && !$this->isExpired();</code>
+            <code>}</code>
+            <code>   </code>
+            <code>function ModelDevice::isOurTokenValid() {</code>
+            <code>    return ($this->token != "");</code>
+            <code>}</code>
+            <code>   </code>
+            <code>function ModelDevice::isDeviceExpired() {</code>
+            <code>    return ($this->expireAtUnixtime >= $now);</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+    <section class="slide shout"><div>
+        <h2>It takes practice. But it's worth it.</h2>
+    </div></section>
+    <section class="slide"><div>
+        <h2>I used to write code this way</h2>
+        <pre>
+            <code>// Setup connection</code>
+            <code>// Request objects</code>
+            <code>// Iterate over objects</code>
+            <code>   // If it's expired - remove it</code>
+        </pre>
+        <p>
+            And then replaced comments with code.
+        </p>
+    </div></section>
+    <section class="slide"><div>
+        <h2>Now I write it this way</h2>
+        <pre>
+            <code>setupConnection()</code>
+            <code>  </code>
+            <code>items = getItems()</code>
+            <code>  </code>
+            <code>for item in items</code>
+            <code>    if item->isExpired() then removeItem(item)</code>
+        </pre>
+        <p>
+            And then implement methods.
+        </p>
+    </div></section>
+    <section class="slide"><div>
+        <h2>Readable code is more efficient to write</h2>
+        <ul>
+            <li>You making fewer bugs when solving smaller problem.</li>
+            <li>You see logical errors when things are named properly.</li>
+            <li>You get tired less thinking tactically.</li>
+        </ul>
+    </div></section>
+    <section class="slide shout"><div>
+        <h2>Try it tomorrow.</h2>
+    </div></section>
+    <!--
+        To hide progress bar from entire presentation
+        just remove “progress” element.
+        -->
+    <div class="progress"><div></div></div>
+    <script src="shower/shower.min.js"></script>
+    <!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+    <!-- Photos by John Carey, fiftyfootshadows.net -->
 </body>
 </html>

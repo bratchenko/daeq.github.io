@@ -1,0 +1,2659 @@
+
+<!doctype html><html><head><title>Chooos.com - Amazing social shopping with hashtags.</title><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQ4AU19VGwEIUVFbAwU="};window.NREUM||(NREUM={}),__nr_require=function t(e,n,r){function o(i){if(!n[i]){var a=n[i]={exports:{}};e[i][0].call(a.exports,function(t){var n=e[i][1][t];return o(n?n:t)},a,a.exports,t,e,n,r)}return n[i].exports}for(var i=0;i<r.length;i++)o(r[i]);return o}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=i[t],o=r&&r.length||0,s=n[a]||(n[a]={}),d=0;o>d;d++)r[d].apply(s,e);return s}function r(t,e){var n=i[t]||(i[t]=[]);n.push(e)}function o(t){return delete t[a]}var i={},a="nr@context";e.exports={on:r,emit:n,clear:o}},{}],2:[function(t){function e(t,e,o,a,d){return s?s-=1:n("err",[d||new UncaughtException(t,e,o)]),"function"==typeof i?i.apply(this,r(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}var n=t("handle"),r=t(6),o=t(5),i=window.onerror,a=!1,s=0;t("loader").features.push("err"),window.onerror=e;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),a=!0)}o.on("fn-start",function(){a&&(s+=1)}),o.on("fn-err",function(t,e,r){a&&(this.thrown=!0,n("err",[r,(new Date).getTime()]))}),o.on("fn-end",function(){a&&!this.thrown&&s>0&&(s-=1)})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){n.inPlace(this,i,"fn-")}var n=t(1),r=t(2),o=window.XMLHttpRequest,i=["onload","onerror","onabort","onloadstart","onloadend","onprogress","onreadystatechange","ontimeout"];window.XMLHttpRequest=function(t){var i=new o(t);return r.emit("new-xhr",[],i),n.inPlace(i,["addEventListener","removeEventListener"],"-",function(t,e){return e}),i.addEventListener("readystatechange",e,!1),i},window.XMLHttpRequest.prototype=o.prototype},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var o=0;p>o;o++)t.removeEventListener(u[o],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,s="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,d=e(s);if(d&&(r.rxSize=d),this.sameOrigin){var f=t.getResponseHeader("X-NewRelic-App-Data");f&&(n.cat=f.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,i("xhr",[n,r])}}}function r(t,e){var n=a(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}function o(t,e){return e}t("loader").features.push("xhr");var i=t("handle"),a=t(1),s=t(5),d=t(6),u=["load","error","abort","timeout"],p=u.length,f=t(2);t(3),t(4),d.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),s.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),d.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),d.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),d.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var a=e(o);a&&(r.txSize=a)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){}};for(var s=0;p>s;s++)n.addEventListener(u[s],this.listener,!1)}),d.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),d.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),d.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),d.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&d.emit("xhr-load-added",[t[1],t[2]],e)}),d.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&d.emit("xhr-load-removed",[t[1],t[2]],e)}),d.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),d.on("fn-end",function(t,e){this.xhrCbStart&&d.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:15,6:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=c.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID){c.proto="https"===f.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=d.createElement("script");e.src=c.proto+t.agent,d.body.appendChild(e)}}function r(){"complete"===d.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,d=s.document,u="addEventListener",p="attachEvent",f=(""+location).split("?")[0],c=e.exports={offset:i(),origin:f,features:[]};d[u]?(d[u]("DOMContentLoaded",o,!1),s[u]("load",n,!1)):(d[p]("onreadystatechange",r),s[p]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,n,r){function nrWrapper(){try{var a,s=i(arguments),d=this,u=n&&n(s,d)||{};o.emit(e+"start",[s,d,r],u)}catch(p){}try{return a=t.apply(d,s)}catch(f){try{o.emit(e+"err",[s,d,f],u)}catch(p){}throw f}finally{try{o.emit(e+"end",[s,d,a],u)}catch(p){}}}return t&&"function"==typeof t&&t.apply&&!t._wrapped?(e||(e=""),nrWrapper._wrapped=!0,nrWrapper):t}function r(t,e,r,o){r||(r="");var i,a,s,d="-"===r.charAt(0);for(s=0;s<e.length;s++)a=e[s],i=t[a],i&&"function"==typeof i&&i.apply&&!i._wrapped&&(t[a]=n(i,d?a+r:r,o,a,t))}var o=t(1),i=t(2);e.exports=n,n.inPlace=r},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Start Your social shopping right now. Choose your favourite brands and owesome goods with your friends, share your porchaising in social network">
+  <meta name="keywords" content="social shopping, shopping, online shopping, shop, online boutiques, online clothing stores, shop online, dress shops, shopping websites">
+  <meta property="og:image" content=""/>
+  <meta name="p:domain_verify" content="e532e67c09a6b9f03d42728f03e5ae1a"/>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css">
+            <link rel="stylesheet" href="/css/79a4836.css"/>
+
+    <link rel="stylesheet" href="/css/418c21d.css"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+</head>
+<body>
+
+  <header class="header">
+  <div class="container">
+    <nav class="navbar navbar-default header_no-border-red-background" role="navigation">
+      <div class="container-fluid">
+                <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand chooos-logo" href="/">
+            <img src="/img/headerLogobig.png">
+          </a>
+        </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse-toggle">
+          <ul class="nav navbar-nav pull-left">
+            <li class="dropdown">
+              <div class="btn-group header-language">
+                <button type="button" class="btn btn-default dropdown-toggle header-button__noborder globe-icon"
+                        data-toggle="dropdown">
+                  English
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <div class="arrow-up"></div>
+                  <li>
+                    <a class="dropdown-menu__blue-text"
+                       href="/referer?_locale=en">
+                      English
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-menu__blue-text"
+                    href="/referer?_locale=ru">
+                      Русский
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right pull-right">
+
+            <li>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle header-button__noborder header-button__noborder-help-button" data-toggle="dropdown">
+                  Help <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu__small-header " role="menu">
+                  <div class="arrow-up"></div>
+                  <li>
+                    <a class="dropdown-menu__blue-text" href="http://www.chooos.com/about_en">
+                      About Chooos
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-menu__blue-text" href="http://www.chooos.com/business_en">
+                      Merchants
+                    </a>
+                  </li>
+                                    <li>
+                    <a class="dropdown-menu__blue-text" href="http://www.chooos.com/faq_en">
+                      FAQ
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+              <li>
+    <button class="btn header-button__border-white" type="button"
+            data-toggle="modal" data-target="#myModalSocial">
+      Sign in
+    </button>
+  </li>
+
+<div id="myModalSocial" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" id="myModalSocial" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 class="modal-title social-login-title__big" id="myModalLabel">Sign in to Chooos</h3>
+      </div>
+
+      <div class="modal-body center-block row social-login">
+        <div>
+          <p class="modal-title social-login-title__small">Connect with a social network</p>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 social-login__buttons">
+          <a class="facebook__button" href="/social/facebook/authorize">
+            <span>Facebook</span></a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 social-login__buttons">
+          <a class="twitter__button" href="/social/twitter/authorize">
+            <span>Twitter</span></a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 social-login__buttons">
+          <a class="google-plus__button" href="/social/google-plus/authorize">
+            <span>Google+</span></a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 social-login__buttons">
+          <a class="vkontakte__button" href="/social/vkontakte/authorize">
+            <span>Вконтакте</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          </ul>
+        </div>      </div>    </nav>
+  </div>
+</header>  <div class="container">
+    <div class="alert alert-info flash">
+  Your action was successful
+</div>
+
+<div class="alert alert-danger flash">
+  During the operation there was an error
+</div>    <div class="row catalog-filter">
+  <div class="col-md-6 margin-zero">
+    <div class="yamm">
+      <ul class="nav nav-pills">
+        <li class="dropdown">
+          <a class="dropdown-toggle catalog-filter-country-selector" data-toggle="dropdown" href="#">
+            <span>Ukraine</span> <i class="fa fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu catalog-filter-country-dropdown" role="menu">
+            <div class="arrow-up"></div>
+            <li data-country="ua"><a href="#">Ukraine</a></li>
+            <li data-country="us"><a href="#">USA</a></li>
+            <li data-country="ru"><a href="#">Russia</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle catalog-filter-category-selector" data-toggle="dropdown" href="#">
+            <span>All categories</span> <i class="fa fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <div class="arrow-up"></div>
+            <li>
+              <div class="row horizontal-dropdown catalog-filter-category-dropdown">
+                                                      <div class="col-md-4">
+                    <ul>
+                                                        <li data-category="all"><a href="#">All categories</a></li>
+                                    <li data-category="man"><a href="#">Men&#039;s fashion</a></li>
+                                                                                        <li data-category="woman"><a href="#">Women&#039;s fashion</a></li>
+                                                                                        <li data-category="kids"><a href="#">Kids</a></li>
+                                                                                        <li data-category="pets"><a href="#">Pets</a></li>
+                                                                                        <li data-category="home"><a href="#">Home</a></li>
+                                      </ul>
+                    </div>
+                                                                        <div class="col-md-4">
+                    <ul>
+                                                      <li data-category="gadgets"><a href="#">Gadgets</a></li>
+                                                                                        <li data-category="art"><a href="#">Art</a></li>
+                                                                                        <li data-category="food"><a href="#">Food</a></li>
+                                                                                        <li data-category="media"><a href="#">Media</a></li>
+                                                                                        <li data-category="architecture"><a href="#">Architecture</a></li>
+                                      </ul>
+                    </div>
+                                                                        <div class="col-md-4">
+                    <ul>
+                                                      <li data-category="sport"><a href="#">Sports</a></li>
+                                                                                        <li data-category="travel"><a href="#">Travel</a></li>
+                                                                                        <li data-category="diy_crafts"><a href="#">DIY &amp; Crafts</a></li>
+                                                                                        <li data-category="worksplace"><a href="#">Workspace</a></li>
+                                                                                        <li data-category="cars_vehicles"><a href="#">Cars &amp; Vehicles</a></li>
+                                      </ul>
+                    </div>
+                                                                        <div class="col-md-4">
+                    <ul>
+                                                      <li data-category="other"><a href="#">Other</a></li>
+                                      </ul>
+                    </div>
+                                                </div>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle catalog-filter-order-selector" data-toggle="dropdown" href="#">
+            <span>By new</span> <i class="fa fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu catalog-filter-order-dropdown" role="menu">
+            <div class="arrow-up"></div>
+            <li data-order="popular"><a href="#">By popular</a></li>
+            <li data-order="new"><a href="#">By new</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-6 margin-zero">
+    <div class="input-group input-group-lg catalog-filter-query">
+      <input type="text" class="form-control" placeholder="Search stuff, #hashtags, peoples and stores">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="product-items">
+
+  <script type="text/template" id="template-catalog-product-item">
+    <div class="product" data-product-id="<%= id %>">
+      <img class="product-image" src="<%= thumbUrl %>">
+
+      <div class="product-overlay">
+        <a class="product-overlay-link" href="<%= url %>">
+          <div class="product-info">
+            <h3 class="product-title"><%= title %></h3>
+            <p>
+              <span class="product-price"><%= price %></span>
+              <small class="product-currency"><%= priceCurrency %></small>
+            </p>
+            <p class="product-chooos-count">
+              <span><%= chooosCount %></span> choosed
+            </p>
+            <section class="btn-group product-buttons">
+              <button class="btn
+                             btn-primary
+                             product-buttons-chooos
+                             <% if (isChooosed) { %> product-buttons-chooos__choosed<% } %>">
+                <span class="fa fa-magnet fa-rotate-90"></span>
+                <span class="product-buttons-chooos-do">
+                  Chooos it
+                </span>
+                <span class="product-buttons-chooos-undo">
+                  Chosen
+                </span>
+              </button>
+              <button class="btn btn-default product-buttons-view">
+                <span class="fa fa-eye"></span>
+                Detailed view
+              </button>
+            </section>
+          </div>
+        </a>
+      </div>
+    </div>
+  </script>
+
+  <div class="product-items-grid row" data-columns>
+          <div class="product" data-product-id="567">
+        <img class="product-image" src="/uploads/large_6239_52a23c766b9bfae0.jpeg" alt="Natural World Shoes Высокие кеды из текстиля">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/567-natural-world-shoes-vysokiie-kiedy-iz-tiekstilia">
+            <div class="product-info">
+              <h3 class="product-title">Natural World Shoes Высокие кеды из текстиля</h3>
+              <p>
+                <span class="product-price">799.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="105">
+        <img class="product-image" src="/uploads/large_5365_0dd354a1a1dfd17b.jpeg" alt="Gant by Michael Bastian рубашка в клетку">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/105-gant-by-michael-bastian-rubashka-v-klietku">
+            <div class="product-info">
+              <h3 class="product-title">Gant by Michael Bastian рубашка в клетку</h3>
+              <p>
+                <span class="product-price">899.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="518">
+        <img class="product-image" src="/uploads/large_6177_a5eed1130b85e1be.jpeg" alt="Sneshana Nekh Туфли из замши с шнуровкой">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/518-sneshana-nekh-tufli-iz-zamshi-s-shnurovkoi">
+            <div class="product-info">
+              <h3 class="product-title">Sneshana Nekh Туфли из замши с шнуровкой</h3>
+              <p>
+                <span class="product-price">900.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1226">
+        <img class="product-image" src="/uploads/large_7634_9cc04aabe8a71413.jpeg" alt="Pooff - safe bright furniture for kids">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1226-pooff-chair">
+            <div class="product-info">
+              <h3 class="product-title">Pooff - safe bright furniture for kids</h3>
+              <p>
+                <span class="product-price">600.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="78">
+        <img class="product-image" src="/uploads/large_5316_0bf1ad15f5e0b812.jpeg" alt="Happy Socks носки Multi Color">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/78-happy-socks-noski-multi-color">
+            <div class="product-info">
+              <h3 class="product-title">Happy Socks носки Multi Color</h3>
+              <p>
+                <span class="product-price">359.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="538">
+        <img class="product-image" src="/uploads/large_6207_8bfa00218661a75a.jpeg" alt="Vosk Клатч с принтом &quot;Фламинго&quot;">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/538-vosk-klatch-s-printom-flamingho">
+            <div class="product-info">
+              <h3 class="product-title">Vosk Клатч с принтом &quot;Фламинго&quot;</h3>
+              <p>
+                <span class="product-price">699.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="806">
+        <img class="product-image" src="/uploads/large_6748_afca3c8fdab9b431.jpeg" alt="Наручные часы Billabong">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/806-naruchnyie-chasy-billabong">
+            <div class="product-info">
+              <h3 class="product-title">Наручные часы Billabong</h3>
+              <p>
+                <span class="product-price">2205.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1230">
+        <img class="product-image" src="/uploads/large_7644_6ba562f795692434.jpeg" alt="Poof - soft outdoor furniture">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1230-poof-soft-outdoor-furniture">
+            <div class="product-info">
+              <h3 class="product-title">Poof - soft outdoor furniture</h3>
+              <p>
+                <span class="product-price">600.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="71">
+        <img class="product-image" src="/uploads/large_5302_81c466948accf67c.jpeg" alt="Countess Mara галстук-бабочка">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/71-countess-mara-ghalstuk-babochka">
+            <div class="product-info">
+              <h3 class="product-title">Countess Mara галстук-бабочка</h3>
+              <p>
+                <span class="product-price">320.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="92">
+        <img class="product-image" src="/uploads/large_9928_e64787de997e01e4.jpeg" alt="DKNY Jeans рубашка в клетку с карманом">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/92-dkny-jeans-rubashka-v-klietku-s-karmanom">
+            <div class="product-info">
+              <h3 class="product-title">DKNY Jeans рубашка в клетку с карманом</h3>
+              <p>
+                <span class="product-price">599.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="921">
+        <img class="product-image" src="/uploads/large_7055_e9a4c3cd0e7c2ad8.jpeg" alt="Religion Брюки Bec">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/921-religion-briuki-bec">
+            <div class="product-info">
+              <h3 class="product-title">Religion Брюки Bec</h3>
+              <p>
+                <span class="product-price">899.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="923">
+        <img class="product-image" src="/uploads/large_7057_4a994e869cbac88c.jpeg" alt="Splendid Джинсы Military">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/923-splendid-dzhinsy-military">
+            <div class="product-info">
+              <h3 class="product-title">Splendid Джинсы Military</h3>
+              <p>
+                <span class="product-price">1059.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="926">
+        <img class="product-image" src="/uploads/large_7065_43108bcc603178b2.jpeg" alt="Kill City Джинсы прямые">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/926-kill-city-dzhinsy-priamyie">
+            <div class="product-info">
+              <h3 class="product-title">Kill City Джинсы прямые</h3>
+              <p>
+                <span class="product-price">899.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1107">
+        <img class="product-image" src="/uploads/large_7386_2410350673c642ca.jpeg" alt="Forever 21 Свитер-лобстер">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1107-forever-21-svitier-lobstier">
+            <div class="product-info">
+              <h3 class="product-title">Forever 21 Свитер-лобстер</h3>
+              <p>
+                <span class="product-price">550.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1108">
+        <img class="product-image" src="/uploads/large_7389_de407f2609984a8a.jpeg" alt="Cliche Реглан - панда">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1108-cliche-rieghlan-panda">
+            <div class="product-info">
+              <h3 class="product-title">Cliche Реглан - панда</h3>
+              <p>
+                <span class="product-price">749.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="208">
+        <img class="product-image" src="/uploads/large_5615_bc0e3b514d26c453.jpeg" alt="Chaplin 1 Navy SWEAR">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/208-chaplin-1-navy-swear">
+            <div class="product-info">
+              <h3 class="product-title">Chaplin 1 Navy SWEAR</h3>
+              <p>
+                <span class="product-price">1200.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1268">
+        <img class="product-image" src="/uploads/large_7731_81d53279a8393cdb.jpeg" alt="Записная книжка Moleskine Simpsons">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1268-zapisnaia-knizhka-moleskine-simpsons">
+            <div class="product-info">
+              <h3 class="product-title">Записная книжка Moleskine Simpsons</h3>
+              <p>
+                <span class="product-price">249.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1316">
+        <img class="product-image" src="/uploads/large_9968_bbf19532727198f3.jpeg" alt="OBEY Slider Pullover Hoodie Sweatshirt">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1316-obey-slider-pullover-hoodie-sweatshirt">
+            <div class="product-info">
+              <h3 class="product-title">OBEY Slider Pullover Hoodie Sweatshirt</h3>
+              <p>
+                <span class="product-price">500.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1461">
+        <img class="product-image" src="/uploads/large_9935_2225ea995fae9d41.jpeg" alt="Свитшот Dream Team">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1461-svitshot-dream-team">
+            <div class="product-info">
+              <h3 class="product-title">Свитшот Dream Team</h3>
+              <p>
+                <span class="product-price">500.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="49">
+        <img class="product-image" src="/uploads/large_9919_6ff9175201f941f7.jpeg" alt="Riviera Club рубашка-пиджак СРО">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/49-riviera-club-rubashka-pidzhak-sro">
+            <div class="product-info">
+              <h3 class="product-title">Riviera Club рубашка-пиджак СРО</h3>
+              <p>
+                <span class="product-price">1099.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="52">
+        <img class="product-image" src="/uploads/large_9920_ca0d4c0d6e48aa6a.jpeg" alt="Kill City кожаная куртка на молнии">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/52-kill-city-kozhanaia-kurtka-na-molnii">
+            <div class="product-info">
+              <h3 class="product-title">Kill City кожаная куртка на молнии</h3>
+              <p>
+                <span class="product-price">1800.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="64">
+        <img class="product-image" src="/uploads/large_9923_0bf062c97cf792b1.jpeg" alt="Civil Society футболка Desoto">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/64-civil-society-futbolka-desoto">
+            <div class="product-info">
+              <h3 class="product-title">Civil Society футболка Desoto</h3>
+              <p>
+                <span class="product-price">499.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="69">
+        <img class="product-image" src="/uploads/large_5301_408801588e988c61.jpeg" alt="Guess ремень из кожи">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/69-guess-riemien-iz-kozhi">
+            <div class="product-info">
+              <h3 class="product-title">Guess ремень из кожи</h3>
+              <p>
+                <span class="product-price">399.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="84">
+        <img class="product-image" src="/uploads/large_9931_6d2b37d6008c37f6.jpeg" alt="Goorin Brothers кепка Da Doyle">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/84-goorin-brithers-kiepka-da-doyle">
+            <div class="product-info">
+              <h3 class="product-title">Goorin Brothers кепка Da Doyle</h3>
+              <p>
+                <span class="product-price">349.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="89">
+        <img class="product-image" src="/uploads/large_9926_4b51a9416b244ea3.jpeg" alt="DKNY Jeans рубашка с длинным рукавом в клетку">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/89-dkny-jeans-rubashka-s-dlinnym-rukavom-v-klietku">
+            <div class="product-info">
+              <h3 class="product-title">DKNY Jeans рубашка с длинным рукавом в клетку</h3>
+              <p>
+                <span class="product-price">599.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="502">
+        <img class="product-image" src="/uploads/large_6158_9b6c569bba23f00f.jpeg" alt="Be and D Кеды Bones">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/502-be-and-d-kiedy-bones">
+            <div class="product-info">
+              <h3 class="product-title">Be and D Кеды Bones</h3>
+              <p>
+                <span class="product-price">999.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="503">
+        <img class="product-image" src="/uploads/large_6160_bfcffa729ddc1a06.jpeg" alt="Converse Кеды Multiple Tongue">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/503-converse-kiedy-multiple-tongue">
+            <div class="product-info">
+              <h3 class="product-title">Converse Кеды Multiple Tongue</h3>
+              <p>
+                <span class="product-price">559.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="504">
+        <img class="product-image" src="/uploads/large_6165_42a994900cd08ce3.jpeg" alt="Converse Высокие кеды c отворотом">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/504-converse-vysokiie-kiedy-c-otvorotom">
+            <div class="product-info">
+              <h3 class="product-title">Converse Высокие кеды c отворотом</h3>
+              <p>
+                <span class="product-price">659.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="529">
+        <img class="product-image" src="/uploads/large_6195_bb01a4f84d522806.jpeg" alt="Vosk Клатч с принтом &quot;Балерина&quot;">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/529-vosk-klatch-s-printom-balierina">
+            <div class="product-info">
+              <h3 class="product-title">Vosk Клатч с принтом &quot;Балерина&quot;</h3>
+              <p>
+                <span class="product-price">699.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="532">
+        <img class="product-image" src="/uploads/large_6200_95fa905cb5377b39.jpeg" alt="Vosk Клатч с принтом &quot;Море&quot;">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/532-vosk-klatch-s-printom-morie">
+            <div class="product-info">
+              <h3 class="product-title">Vosk Клатч с принтом &quot;Море&quot;</h3>
+              <p>
+                <span class="product-price">550.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="540">
+        <img class="product-image" src="/uploads/large_6211_71c495667bb9307c.jpeg" alt="Lara Quint Клатч с принтом">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/540-lara-quint-klatch-s-printom">
+            <div class="product-info">
+              <h3 class="product-title">Lara Quint Клатч с принтом</h3>
+              <p>
+                <span class="product-price">1950.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="576">
+        <img class="product-image" src="/uploads/large_6253_1ee90595cd750722.jpeg" alt="Olibertе Ботинки Mogado">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/576-olibertie-botinki-mogado">
+            <div class="product-info">
+              <h3 class="product-title">Olibertе Ботинки Mogado</h3>
+              <p>
+                <span class="product-price">1499.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="589">
+        <img class="product-image" src="/uploads/large_6289_c059e1130dc4063e.jpeg" alt="Christian Adigieur - Толстовка с принтом">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/589-christian-adigieur-tolstovka-s-printom">
+            <div class="product-info">
+              <h3 class="product-title">Christian Adigieur - Толстовка с принтом</h3>
+              <p>
+                <span class="product-price">899.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="837">
+        <img class="product-image" src="/uploads/large_6814_f9737c452d0bcd01.jpeg" alt="Ben Sherman Кошелек из кожи">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/837-ben-sherman-koshieliek-iz-kozhi">
+            <div class="product-info">
+              <h3 class="product-title">Ben Sherman Кошелек из кожи</h3>
+              <p>
+                <span class="product-price">499.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="888">
+        <img class="product-image" src="/uploads/large_6957_085f44abfc41c88d.jpeg" alt="D. Gnak by Kang. D Рубашка с воротом из хлопка">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/888-d-gnak-by-kang-d-rubashka-s-vorotom-iz-khlopka">
+            <div class="product-info">
+              <h3 class="product-title">D. Gnak by Kang. D Рубашка с воротом из хлопка</h3>
+              <p>
+                <span class="product-price">1199.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="894">
+        <img class="product-image" src="/uploads/large_7021_b93c2aec6b207246.jpeg" alt="Kill City Легкое пальто с капюшоном">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/894-kill-city-lieghkoie-pal-to-s-kapiushonom">
+            <div class="product-info">
+              <h3 class="product-title">Kill City Легкое пальто с капюшоном</h3>
+              <p>
+                <span class="product-price">1199.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="931">
+        <img class="product-image" src="/uploads/large_9917_9e0ef2474a882c66.jpeg" alt="Mason&#039;s New York Брюки из вельвета">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/931-mason-s-new-york-briuki-iz-viel-vieta">
+            <div class="product-info">
+              <h3 class="product-title">Mason&#039;s New York Брюки из вельвета</h3>
+              <p>
+                <span class="product-price">1099.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="933">
+        <img class="product-image" src="/uploads/large_7090_9f2f36635a5b691d.jpeg" alt="IVNVA sweet.baby.jesus. Узкие брюки из коттона">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/933-ivnva-sweet-baby-jesus-uzkiie-briuki-iz-kottona">
+            <div class="product-info">
+              <h3 class="product-title">IVNVA sweet.baby.jesus. Узкие брюки из коттона</h3>
+              <p>
+                <span class="product-price">1259.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="948">
+        <img class="product-image" src="/uploads/large_7115_bb811ce4962f3f35.jpeg" alt="Icecream Футболка с принтом">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/948-icecream-futbolka-s-printom">
+            <div class="product-info">
+              <h3 class="product-title">Icecream Футболка с принтом</h3>
+              <p>
+                <span class="product-price">450.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="949">
+        <img class="product-image" src="/uploads/large_7117_991a0aaa840b5274.jpeg" alt="Civil Society Майка с принтом">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/949-civil-society-maika-s-printom">
+            <div class="product-info">
+              <h3 class="product-title">Civil Society Майка с принтом</h3>
+              <p>
+                <span class="product-price">249.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="953">
+        <img class="product-image" src="/uploads/large_7128_f1afa306ff9921db.jpeg" alt="Second Sunday Футболка Pozer">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/953-second-sunday-futbolka-pozer">
+            <div class="product-info">
+              <h3 class="product-title">Second Sunday Футболка Pozer</h3>
+              <p>
+                <span class="product-price">550.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1058">
+        <img class="product-image" src="/uploads/large_7308_8009cb61419002f3.jpeg" alt="Wildfox Свитер с рисунком">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1058-wildfox-svitier-s-risunkom">
+            <div class="product-info">
+              <h3 class="product-title">Wildfox Свитер с рисунком</h3>
+              <p>
+                <span class="product-price">959.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="408">
+        <img class="product-image" src="/uploads/large_6049_49849e4159c4bc2f.jpeg" alt="ACTEK INDIE ACTEK concept">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/408-actek-indie-actek-concept">
+            <div class="product-info">
+              <h3 class="product-title">ACTEK INDIE ACTEK concept</h3>
+              <p>
+                <span class="product-price">200.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="499">
+        <img class="product-image" src="/uploads/large_6143_4b598fc02680adb8.jpeg" alt="Брутальний шева Миша Прысташ">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/499-brutal-nii-shieva-misha-prystash">
+            <div class="product-info">
+              <h3 class="product-title">Брутальний шева Миша Прысташ</h3>
+              <p>
+                <span class="product-price">200.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1266">
+        <img class="product-image" src="/uploads/large_7728_fa1ae4ef3a3e1ff5.png" alt="Apple iPhone 5S 16Gb Gold">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1266-apple-iphone-5s-16gb-gold">
+            <div class="product-info">
+              <h3 class="product-title">Apple iPhone 5S 16Gb Gold</h3>
+              <p>
+                <span class="product-price">7999.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1308">
+        <img class="product-image" src="/uploads/large_9972_d194d02cc3bc6776.jpeg" alt="Mishka Cyrillic Gore Drip Crewneck - Navy">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1308-mishka-cyrillic-gore-drip-crewneck-navy">
+            <div class="product-info">
+              <h3 class="product-title">Mishka Cyrillic Gore Drip Crewneck - Navy</h3>
+              <p>
+                <span class="product-price">500.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1343">
+        <img class="product-image" src="/uploads/large_7926_2c010c1c23a7cade.jpeg" alt="Heritage Backpack - Navy">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1343-heritage-backpack-navy">
+            <div class="product-info">
+              <h3 class="product-title">Heritage Backpack - Navy</h3>
+              <p>
+                <span class="product-price">750.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1699">
+        <img class="product-image" src="/uploads/large_8927_1f6c3ce3d77d7af5.jpeg" alt="Клатч Герб">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1699-klatch-gierb">
+            <div class="product-info">
+              <h3 class="product-title">Клатч Герб</h3>
+              <p>
+                <span class="product-price">65.00</span>
+                <small class="product-currency">USD</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="1889">
+        <img class="product-image" src="/uploads/large_9653_a26a9ba1dda169bd.jpeg" alt="Бамбукові зубні щітки Будь моїм гостем.">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/1889-bambukovi-zubni-shchitki-bud-moyim-ghostiem-nabir-4-sht">
+            <div class="product-info">
+              <h3 class="product-title">Бамбукові зубні щітки Будь моїм гостем.</h3>
+              <p>
+                <span class="product-price">160.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="126">
+        <img class="product-image" src="/uploads/large_5416_78ed684f5afc3395.png" alt="Ботинки из замши">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/126-botinki-iz-zamshi">
+            <div class="product-info">
+              <h3 class="product-title">Ботинки из замши</h3>
+              <p>
+                <span class="product-price">999.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="5">
+        <img class="product-image" src="/uploads/large_5180_5ca6a05b89025921.jpeg" alt="Туфли">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/5-tufli">
+            <div class="product-info">
+              <h3 class="product-title">Туфли</h3>
+              <p>
+                <span class="product-price">900.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="6">
+        <img class="product-image" src="/uploads/large_5181_b52448ad8cb58385.jpeg" alt="Туфли">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/6-tufli">
+            <div class="product-info">
+              <h3 class="product-title">Туфли</h3>
+              <p>
+                <span class="product-price">900.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="28">
+        <img class="product-image" src="/uploads/large_5212_fc69cb97f7f6af25.jpeg" alt="Tumqo колье-коса">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/28-tumqo-kol-ie-kosa">
+            <div class="product-info">
+              <h3 class="product-title">Tumqo колье-коса</h3>
+              <p>
+                <span class="product-price">700.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="31">
+        <img class="product-image" src="/uploads/large_9934_d3371d7a524012cd.jpeg" alt="W118 by Walter Baker юбка с поясом">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/31-w118-by-walter-baker-iubka-s-poiasom">
+            <div class="product-info">
+              <h3 class="product-title">W118 by Walter Baker юбка с поясом</h3>
+              <p>
+                <span class="product-price">849.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="33">
+        <img class="product-image" src="/uploads/large_9918_b0df3abae08e1360.jpeg" alt="French Connection юбка с карманами">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/33-french-connection-iubka-s-karmanami">
+            <div class="product-info">
+              <h3 class="product-title">French Connection юбка с карманами</h3>
+              <p>
+                <span class="product-price">1199.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="34">
+        <img class="product-image" src="/uploads/large_9933_04f9d5ace1677080.jpeg" alt="Eva Franco юбка из шерсти">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/34-eva-franco-iubka-iz-shiersti">
+            <div class="product-info">
+              <h3 class="product-title">Eva Franco юбка из шерсти</h3>
+              <p>
+                <span class="product-price">1259.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="40">
+        <img class="product-image" src="/uploads/large_5244_a32ffe3acc59df4e.jpeg" alt="Kill City узкие джинсы">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/40-kill-city-uzkiie-dzhinsy">
+            <div class="product-info">
+              <h3 class="product-title">Kill City узкие джинсы</h3>
+              <p>
+                <span class="product-price">1099.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="43">
+        <img class="product-image" src="/uploads/large_5248_6bf0a2aa25e6191e.jpeg" alt="Earnest Sewn джинсы Skinny">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/43-earnest-sewn-dzhinsy-skinny">
+            <div class="product-info">
+              <h3 class="product-title">Earnest Sewn джинсы Skinny</h3>
+              <p>
+                <span class="product-price">1199.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="44">
+        <img class="product-image" src="/uploads/large_5255_dd0672650533e4df.jpeg" alt="Current Elliot узкие джинсы с принтом">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/44-current-elliot-uzkiie-dzhinsy-s-printom">
+            <div class="product-info">
+              <h3 class="product-title">Current Elliot узкие джинсы с принтом</h3>
+              <p>
+                <span class="product-price">1299.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="45">
+        <img class="product-image" src="/uploads/large_5258_aa28ae95dfb37125.jpeg" alt="Diesel прямые джинсы">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/45-diesel-priamyie-dzhinsy">
+            <div class="product-info">
+              <h3 class="product-title">Diesel прямые джинсы</h3>
+              <p>
+                <span class="product-price">999.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="47">
+        <img class="product-image" src="/uploads/large_9932_ea1e87635645d67e.jpeg" alt="Sandro узкие джинсы с замками">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/47-sandro-uzkiie-dzhinsy-s-zamkami">
+            <div class="product-info">
+              <h3 class="product-title">Sandro узкие джинсы с замками</h3>
+              <p>
+                <span class="product-price">1199.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="54">
+        <img class="product-image" src="/uploads/large_9909_5727a3c0cd30cd76.jpeg" alt="Billionaire Boys Club стеганная куртка">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/54-billionaire-boys-club-stieghannaia-kurtka">
+            <div class="product-info">
+              <h3 class="product-title">Billionaire Boys Club стеганная куртка</h3>
+              <p>
+                <span class="product-price">1500.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="57">
+        <img class="product-image" src="/uploads/large_5281_3df190bcb4955bda.jpeg" alt="Forever21 жилет с капюшеном">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/57-forever21-zhiliet-s-kapiushienom">
+            <div class="product-info">
+              <h3 class="product-title">Forever21 жилет с капюшеном</h3>
+              <p>
+                <span class="product-price">500.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+          <div class="product" data-product-id="59">
+        <img class="product-image" src="/uploads/large_9940_fcd116d1d72afc9a.jpeg" alt="KBDM футболка с принтом &quot;Чудотворец&quot;">
+
+        <div class="product-overlay">
+          <a class="product-overlay-link" href="/product/59-kbdm-futbolka-s-printom-chudotvoriets">
+            <div class="product-info">
+              <h3 class="product-title">KBDM футболка с принтом &quot;Чудотворец&quot;</h3>
+              <p>
+                <span class="product-price">459.00</span>
+                <small class="product-currency">UAH</small>
+              </p>
+              <p class="product-chooos-count">
+                <span>1</span> choosed
+              </p>
+              <section class="btn-group product-buttons">
+                                <button class="btn
+                               btn-primary
+                               product-buttons-chooos
+                               ">
+                  <span class="fa fa-magnet fa-rotate-90"></span>
+                  <span class="product-buttons-chooos-do">
+                    Chooos it
+                  </span>
+                  <span class="product-buttons-chooos-undo">
+                    Chosen
+                  </span>
+                </button>
+                <button class="btn btn-default product-buttons-view">
+                  <span class="fa fa-eye"></span>
+                  Detailed view
+                </button>
+              </section>
+            </div>
+          </div>
+        </a>
+      </div>
+      </div>
+
+  <h3 class="text-center products-no-result  hidden">
+    No results
+  </h3>
+
+  <div class="row col-md-12 product-items-more invisible">
+    <button type="button" class="btn btn-primary">
+      Show more items
+    </button>
+  </div>
+
+</div>
+  </div>
+  <footer class="footer">
+  <div class="container">
+    <div class="col-lg-1 col-md-1 clearfix visible-lg visible-md chooos-logo__footer__left-0">
+      <a class="chooos-logo__footer" href="/">
+        <img src="/img/foot-logo.png" class="center-block chooos-logo__footer__left-0">
+      </a>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 list-group">
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 footer-list-group__padding-0">
+        <ul class="footer-list-group footer-list-group__padding-0">
+          <li><a class="list-group-item" href="http://www.chooos.com/about_en">About Chooos</a></li>
+          <li><a class="list-group-item" href="http://www.chooos.com/business_en">Merchants</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+        <ul class="footer-list-group footer-list-group__padding-0">
+          <li><a class="list-group-item" href="http://www.chooos.com/faq_en">FAQ</a></li>
+          <li><a class="list-group-item" href="http://www.chooos.com/terms_en">Terms of Service</a></li>
+          <li><a class="list-group-item" href="http://www.chooos.com/privacy_en">Privacy Policy</a></li>
+                  </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 footer-social-icons__padding-0">
+      <a class="btn footer-social-icons footer-social-icons__padding-0" href="https://plus.google.com/104310243950110221661" target="_blank" title="Chooos.com on Google+">
+        <i class="fa fa-google-plus"></i>
+      </a>
+      <a class="btn footer-social-icons" href="http://vk.com/chooos" target="_blank" title="Chooos.com on Vkontakte">
+        <i class="fa fa-vk"></i>
+      </a>
+      <a class="btn footer-social-icons" href="http://www.pinterest.com/chooosme/" target="_blank" title="Chooos.com on Pinterest">
+        <i class="fa fa-pinterest"></i>
+      </a>
+      <a class="btn footer-social-icons" href="http://instagram.com/chooosme" target="_blank" title="Chooos.com on Instagramm">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a class="btn footer-social-icons" href="https://twitter.com/chooosme" target="_blank" title="Chooos.com on Twitter">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a class="btn footer-social-icons" href="https://www.facebook.com/chooos" target="_blank" title="Chooos.com on Facebook">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.js"></script>
+          <script type="text/javascript" src="/js/08937ff.js"></script>
+              <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-49595920-1', 'chooos.com');
+        ga('send', 'pageview');
+      </script>
+      <script type="text/javascript">var _kmq = _kmq || []; var _kmk = _kmk || '790b9883f58c10d56e8d6e58f2b2aaa7b02b6a29'; function _kms(u){ setTimeout(function(){ var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = u; f.parentNode.insertBefore(s, f); }, 1); } _kms('//i.kissmetrics.com/i.js'); _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+      </script>
+
+  <script>
+    window.config = window.config || {};
+    $.extend(window.config, {
+      user_id: null    });
+
+    var userSeachParam = {
+      'country': 'ua',
+      'order': 'popular',
+      'category': 'all',
+      'query': ''
+    };
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+      <script type="text/javascript" src="/js/868f3fc.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","licenseKey":"2ad278b68c","applicationID":"2850944","transactionName":"YVxXbRACVkVQWkxRV1gWdFoWCldYHl9KV1ZCXFtdTAtXW1Q=","queueTime":0,"applicationTime":293,"ttGuid":"","agentToken":"","userAttributes":"","errorBeacon":"jserror.newrelic.com","agent":"js-agent.newrelic.com\/nr-378.min.js"}</script></body>
+</html>
